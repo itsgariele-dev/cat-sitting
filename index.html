@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nugget's Care · Soins de Nugget</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-dark: #4a2b3c;
+    --color-light: #f4efea;
+    --color-charcoal: #060606;
+    --color-accent: #d3eb9a;
+    --font-heading: 'Instrument Serif', Georgia, serif;
+    --font-body: 'Inter', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--color-light);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  /* Header */
+  header {
+    background: var(--color-dark);
+    color: var(--color-light);
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+  }
+  header .inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  header h1 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 7vw, 4rem);
+    margin: 0 0 6px;
+    line-height: 1.05;
+  }
+  header p {
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin: 0;
+  }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: inline-flex;
+    gap: 4px;
+    margin-top: 28px;
+    background: rgba(244, 239, 234, 0.12);
+    border-radius: 999px;
+    padding: 4px;
+  }
+  .lang-toggle button {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    border: none;
+    background: transparent;
+    color: var(--color-light);
+    padding: 8px 20px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+  .lang-toggle button.active {
+    background: var(--color-accent);
+    color: var(--color-dark);
+  }
+
+  /* Sections */
+  section {
+    background: #ffffff;
+    border: 1px solid rgba(74, 43, 60, 0.12);
+    border-radius: 12px;
+    padding: 26px 28px;
+    margin-top: 22px;
+    box-shadow: 0 2px 8px rgba(74, 43, 60, 0.06);
+  }
+  section:first-of-type { margin-top: 34px; }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 1.9rem;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .emoji { font-size: 1.5rem; }
+
+  h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    opacity: 0.65;
+    margin: 26px 0 10px;
+  }
+  h3:first-of-type { margin-top: 18px; }
+
+  ul, ol { margin: 0 0 4px; padding-left: 22px; }
+  li { margin: 7px 0; }
+  li::marker { color: var(--color-dark); }
+
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(74, 43, 60, 0.12);
+    margin: 22px 0 0;
+  }
+
+  /* Highlight / callout */
+  .callout {
+    background: var(--color-accent);
+    color: var(--color-dark);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    font-weight: 500;
+  }
+  .callout strong { font-weight: 600; }
+
+  .badge {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-left: 4px;
+    vertical-align: middle;
+  }
+
+  .placeholder {
+    color: var(--color-dark);
+    background: rgba(74, 43, 60, 0.07);
+    border: 1px dashed rgba(74, 43, 60, 0.35);
+    border-radius: 5px;
+    padding: 1px 8px;
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  em { font-style: italic; }
+  .u { text-decoration: underline; }
+
+  .lang-fr { display: none; }
+  body.show-fr .lang-en { display: none; }
+  body.show-fr .lang-fr { display: block; }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    opacity: 0.55;
+  }
+
+  @media print {
+    .lang-toggle { display: none; }
+    body { background: #fff; }
+    section { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1>Nugget&rsquo;s Care</h1>
+      <p><span class="lang-en" style="display:inline">Cat &amp; house sitting guide</span><span class="lang-fr">Guide de garde &mdash; chat et maison</span></p>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="btn-en" class="active" onclick="setLang('en')">English</button>
+        <button id="btn-fr" onclick="setLang('fr')">Français</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- ================= ENGLISH ================= -->
+    <div class="lang-en">
+
+      <section>
+        <h2><span class="emoji">🔑</span> House Entry</h2>
+        <ul>
+          <li>Code for basement door: <span class="placeholder">to fill in</span></li>
+          <li>Kitchen key hidden: <span class="placeholder">to fill in</span></li>
+          <li>To lock kitchen: pull up on handle, <em>then</em> turn key</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="emoji">📞</span> Emergency &amp; Vet</h2>
+        <h3>Emergency Contact</h3>
+        <ul>
+          <li><span class="placeholder">to fill in</span></li>
+        </ul>
+        <h3>Vet</h3>
+        <ul>
+          <li><span class="placeholder">vet name to fill in</span> &mdash; he comes to the house</li>
+          <li>If needed, the cat carrier is in the basement (easiest to load her from the top)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="emoji">🐈</span> Caring for Nugget</h2>
+        <h3>Daily Tasks</h3>
+        <ol>
+          <li>Serve ⅓ can of wet food, 1&ndash;2× per day <em>(but medication is <span class="u">once daily</span>)</em></li>
+          <li>Refill dry food bowls &mdash; <strong>both downstairs and upstairs</strong></li>
+          <li>Fill water dishes &mdash; <strong>both downstairs and upstairs</strong></li>
+          <li>Scoop the litter, as needed</li>
+        </ol>
+
+        <h3>Medication <span class="badge">Once Daily</span></h3>
+        <ol>
+          <li>Add ⅛ teaspoon of Aventi powder to the wet food</li>
+          <li>Place a pill in a treat pocket, pinch at the top, and bury it in the wet food</li>
+        </ol>
+
+        <h3>Changing the Litter</h3>
+        <p style="margin-top:0">You may need to fully change the litter since we&rsquo;re away for a few weeks:</p>
+        <ol>
+          <li>Pour the used litter into the garbage bag</li>
+          <li>Rinse the bin using the downstairs sink or the hose outside</li>
+          <li>Leave it to dry</li>
+          <li>Fill the second bin with fresh cat litter</li>
+        </ol>
+
+        <div class="callout">
+          🐾 Please <strong>don&rsquo;t pick up Nugget</strong>. And if she doesn&rsquo;t eat her medication, <strong>don&rsquo;t worry</strong> &mdash; missed doses are okay 🙂
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="emoji">🏡</span> House Sitting</h2>
+        <ol>
+          <li>Water the plants <strong>once a week &mdash; 1 L each</strong></li>
+          <li>Bring in the mail and any packages</li>
+          <li>Take out and bring back the garbage and recycling bins</li>
+          <li><strong>Cardboard &amp; recycling go out August 13</strong> (pickup is early AM on August 14)</li>
+        </ol>
+      </section>
+
+    </div>
+
+    <!-- ================= FRENCH ================= -->
+    <div class="lang-fr">
+
+      <section>
+        <h2><span class="emoji">🔑</span> Entrée de la maison</h2>
+        <ul>
+          <li>Code de la porte du sous-sol : <span class="placeholder">à compléter</span></li>
+          <li>Clé de la cuisine cachée : <span class="placeholder">à compléter</span></li>
+          <li>Pour verrouiller la cuisine : tirez la poignée vers le haut, <em>puis</em> tournez la clé</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="emoji">📞</span> Urgence et vétérinaire</h2>
+        <h3>Contact d&rsquo;urgence</h3>
+        <ul>
+          <li><span class="placeholder">à compléter</span></li>
+        </ul>
+        <h3>Vétérinaire</h3>
+        <ul>
+          <li><span class="placeholder">nom du vétérinaire à compléter</span> &mdash; il se déplace à domicile</li>
+          <li>Au besoin, la cage de transport est au sous-sol (le plus facile est de la charger par le haut)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="emoji">🐈</span> S&rsquo;occuper de Nugget</h2>
+        <h3>Tâches quotidiennes</h3>
+        <ol>
+          <li>Servir ⅓ de boîte de nourriture humide, 1 à 2 fois par jour <em>(mais le médicament, lui, est <span class="u">une fois par jour</span>)</em></li>
+          <li>Remplir les bols de nourriture sèche &mdash; <strong>en bas et en haut</strong></li>
+          <li>Remplir les bols d&rsquo;eau &mdash; <strong>en bas et en haut</strong></li>
+          <li>Nettoyer la litière, au besoin</li>
+        </ol>
+
+        <h3>Médicament <span class="badge">Une fois par jour</span></h3>
+        <ol>
+          <li>Ajoutez ⅛ de cuillère à thé de poudre Aventi à la nourriture humide</li>
+          <li>Placez un comprimé dans une poche à gâterie, pincez le haut et enfouissez-le dans la nourriture humide</li>
+        </ol>
+
+        <h3>Changer la litière</h3>
+        <p style="margin-top:0">Il faudra peut-être changer complètement la litière puisque nous serons absents quelques semaines :</p>
+        <ol>
+          <li>Videz la litière usagée dans le sac à ordures</li>
+          <li>Rincez le bac à l&rsquo;évier du sous-sol ou au boyau d&rsquo;arrosage à l&rsquo;extérieur</li>
+          <li>Laissez sécher</li>
+          <li>Remplissez le deuxième bac avec de la litière propre</li>
+        </ol>
+
+        <div class="callout">
+          🐾 S&rsquo;il vous plaît, <strong>ne prenez pas Nugget dans vos bras</strong>. Et si elle ne mange pas son médicament, <strong>pas d&rsquo;inquiétude</strong> &mdash; les doses manquées, ce n&rsquo;est pas grave 🙂
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="emoji">🏡</span> Garde de la maison</h2>
+        <ol>
+          <li>Arroser les plantes <strong>une fois par semaine &mdash; 1 L chacune</strong></li>
+          <li>Rentrer le courrier et les colis</li>
+          <li>Sortir et rentrer les bacs à ordures et de recyclage</li>
+          <li><strong>Le carton et le recyclage sortent le 13 août</strong> (la collecte est tôt le matin le 14 août)</li>
+        </ol>
+      </section>
+
+    </div>
+
+    <footer>
+      🐈 Nugget &middot; Thank you / Merci
+    </footer>
+
+  </div>
+
+<script>
+  function setLang(lang) {
+    document.body.classList.toggle('show-fr', lang === 'fr');
+    document.documentElement.lang = lang;
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+  }
+</script>
+</body>
+</html>
