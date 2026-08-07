@@ -35,17 +35,14 @@
     padding: 0 20px 80px;
   }
 
-  /* Language toggle spans (header only) */
   .lang-fr { display: none; }
   body.show-fr .lang-en { display: none; }
   body.show-fr .lang-fr { display: inline; }
 
-  /* Full content block toggle */
   .content-fr { display: none; }
   body.show-fr .content-en { display: none; }
   body.show-fr .content-fr { display: block; }
 
-  /* Header */
   header {
     background: var(--color-dark);
     color: var(--color-light);
@@ -53,10 +50,7 @@
     text-align: center;
     position: relative;
   }
-  header .inner {
-    max-width: 820px;
-    margin: 0 auto;
-  }
+  header .inner { max-width: 820px; margin: 0 auto; }
   header h1 {
     font-family: var(--font-heading);
     font-weight: 400;
@@ -108,10 +102,7 @@
     opacity: 1;
   }
 
-  /* Sections */
-  section {
-    margin-top: 44px;
-  }
+  section { margin-top: 44px; }
   section h2 {
     font-family: var(--font-heading);
     font-weight: 400;
@@ -141,22 +132,13 @@
     box-shadow: 0 2px 8px rgba(74, 43, 60, 0.06);
   }
 
-  ul.list, ol.list {
-    margin: 0;
-    padding-left: 20px;
-  }
-  ul.list li, ol.list li {
-    margin-bottom: 9px;
-  }
+  ul.list, ol.list { margin: 0; padding-left: 20px; }
+  ul.list li, ol.list li { margin-bottom: 9px; }
   ul.list li:last-child, ol.list li:last-child { margin-bottom: 0; }
 
-  p.lede {
-    margin: 0 0 18px;
-  }
-
+  p.lede { margin: 0 0 18px; }
   strong { font-weight: 600; }
 
-  /* Callouts */
   .callout {
     background: #ffffff;
     border: 1px solid rgba(74, 43, 60, 0.12);
@@ -168,16 +150,32 @@
   .callout.warn { border-left-color: var(--color-dark); }
   .callout p { margin: 0; }
 
-  .grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+  ul.checklist { list-style: none; margin: 0; padding: 0; }
+  ul.checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(74, 43, 60, 0.08);
   }
-  @media (max-width: 640px) {
-    .grid-2 { grid-template-columns: 1fr; }
+  ul.checklist li:last-child { border-bottom: none; }
+  ul.checklist input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--color-dark);
+    flex-shrink: 0;
+  }
+  .checklist-signoff {
+    margin-top: 18px;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
   }
 
-  /* Table */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -220,16 +218,9 @@
       overflow: hidden;
     }
     tbody tr:last-child { margin-bottom: 0; }
-    tbody td {
-      border-bottom: none;
-      padding: 10px 16px;
-    }
+    tbody td { border-bottom: none; padding: 10px 16px; }
     tbody td.name { background: rgba(74, 43, 60, 0.06); }
-    tbody td.role::before {
-      content: "Role: ";
-      font-weight: 600;
-      opacity: 0.6;
-    }
+    tbody td.role::before { content: "Role: "; font-weight: 600; opacity: 0.6; }
     tbody td.phone::before {
       content: "Phone: ";
       display: block;
@@ -268,15 +259,14 @@
     <h1><span class="lang-en">Welcome to Our Home</span><span class="lang-fr">Bienvenue chez nous</span></h1>
     <p class="subtitle"><span class="lang-en">A guide for your stay while we're away</span><span class="lang-fr">Un guide pour votre séjour pendant notre absence</span></p>
     <p class="intro">
-      <span class="lang-en">Thank you for taking such good care of our home and cat while we're gone. Please text or call us with any questions or concerns — we'll have cellular and satellite reception.</span>
-      <span class="lang-fr">Merci de prendre si bien soin de notre maison et de notre chatte pendant notre absence. Écrivez-nous ou appelez-nous pour toute question — nous aurons une réception cellulaire et satellite.</span>
+      <span class="lang-en">Thank you for taking such good care of our home and cat while we're gone. Everything you need is below. Please text or call us with any questions or concerns. Please treat our home as your own!! 🙂</span>
+      <span class="lang-fr">Merci de prendre si bien soin de notre maison et de notre chatte pendant notre absence. Tout ce dont vous avez besoin se trouve ci-dessous. Écrivez-nous ou appelez-nous pour toute question. Sentez-vous chez vous!! 🙂</span>
     </p>
   </div>
 </header>
 
 <div class="wrap">
 
-  <!-- ============ ENGLISH ============ -->
   <div class="content-en">
 
     <section>
@@ -284,12 +274,12 @@
       <table>
         <thead><tr><th>Contact</th><th>Role</th><th>Phone</th></tr></thead>
         <tbody>
-          <tr><td class="name">Brandon &amp; Gariele</td><td class="role">First contact for everything! Call, text, or email any time — we'll have Internet access even without cell service.</td><td class="phone">250-208-0807<br>250-532-5139<br>coastalbrandon@gmail.com<br>itsgariele@gmail.com</td></tr>
+          <tr><td class="name">Brandon &amp; Gariele</td><td class="role">First contact for everything! You can call/text/email at any time. We will have Internet access even if we do not have cell service.</td><td class="phone">250-208-0807<br>250-532-5139<br>coastalbrandon@gmail.com<br>itsgariele@gmail.com</td></tr>
           <tr><td class="name">Ken</td><td class="role">Brandon's dad (45 min away)</td><td class="phone">250-709-1280</td></tr>
           <tr><td class="name">Tim</td><td class="role">Neighbour</td><td class="phone">250-217-5396</td></tr>
           <tr><td class="name">Ryan</td><td class="role">Neighbour</td><td class="phone">250-882-2234</td></tr>
-          <tr><td class="name">Vet — Dr. John Pollock</td><td class="role">Regular vet, comes to the house</td><td class="phone">(778) 677-7713</td></tr>
-          <tr><td class="name">Emergency Vet — VCA</td><td class="role">After-hours / emergency</td><td class="phone">(250) 475-2495</td></tr>
+          <tr><td class="name">Vet – Dr. John Pollock</td><td class="role">Regular vet — comes to house</td><td class="phone">(778) 677-7713</td></tr>
+          <tr><td class="name">Emergency Vet – VCA</td><td class="role">After-hours / emergency</td><td class="phone">(250) 475-2495</td></tr>
         </tbody>
       </table>
     </section>
@@ -301,21 +291,21 @@
           <li><strong>Keypad door code:</strong> 2015</li>
           <li><strong>Shed door code:</strong> 2624</li>
           <li><strong>Hidden key:</strong> A key to the kitchen door is hidden in an umbrella stand behind the green bin outside.</li>
-          <li><strong>Kitchen door:</strong> To lock it, pull up on the handle, then turn the lock — it won't lock without pulling up the handle first.</li>
+          <li><strong>Kitchen door:</strong> To lock the door, pull up on the handle, then turn the lock. The door will not lock without pulling up the handle first.</li>
         </ul>
       </div>
     </section>
 
     <section>
-      <h2>🏡 House Sitting — Important Details</h2>
+      <h2>🏡 House Sitting / Important Details</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Mail / packages:</strong> Please hold letters or packages. Flyers &amp; newspapers can be recycled.</li>
-          <li><strong>Plants:</strong> We have 2 indoor plants that need watering. Once a week, pour 1 L of water into each planter.</li>
-          <li><strong>Cleaners:</strong> Our house cleaners come on August 20, 11:15am–12:45pm, for regular cleaning. It's paid automatically every month — you don't need to be home.</li>
-          <li><strong>Plumbing:</strong> We have old pipes and low flush pressure — it's not uncommon to need more than one flush. The upstairs faucet also has a drip.</li>
-          <li><strong>Off-limits:</strong> Aria has asked that everything in her bedroom stay untouched.</li>
-          <li><strong>Garbage &amp; recycling:</strong> Put out all garbage, crushed cardboard, and recycling on the curb on August 13.</li>
+          <li><strong>Mail/packages:</strong> Please hold letters or packages. Flyers &amp; newspapers can be recycled.</li>
+          <li><strong>Plants:</strong> We have 2 indoor plants that need watering. Once/week, pour 1L of water into each planter.</li>
+          <li><strong>Cleaners:</strong> Our house cleaners will come on August 20 at 11:15–12:45pm for our regular cleaning. We pay automatically every month. You do not need to be at the house.</li>
+          <li><strong>Plumbing:</strong> We have old pipes and low flush pressure — it's not uncommon to need more than one flush.</li>
+          <li><strong>Off limits:</strong> Aria has requested that all items in her bedroom remain untouched.</li>
+          <li><strong>Garbage &amp; Recycling:</strong> Put out all garbage, crushed cardboard and recycling on the curb on August 13.</li>
         </ul>
       </div>
     </section>
@@ -325,69 +315,14 @@
       <div class="card">
         <ul class="list">
           <li><strong>Wi-Fi:</strong> NanoMansion, password: Socoastal1</li>
-          <li><strong>TV / streaming:</strong> Use our subscriptions to Crave, Netflix, Disney+, YouTube, Apple TV, or Prime Video. No need to sign out.</li>
+          <li><strong>TV/Streaming:</strong> You may use our subscriptions to Crave, Netflix, Disney+, YouTube, Apple TV or Prime Video. No need to sign out.</li>
+          <li><strong>Lights / Google Home:</strong> Many of our lights are controlled by Google Home. The only ones you need to know are in the rec room. Say out loud the following commands:
+            <ul class="list" style="margin-top:8px;">
+              <li><strong>Turn on:</strong> "Hey Google, it's game time"</li>
+              <li><strong>Turn off:</strong> "Hey Google, game over"</li>
+            </ul>
+          </li>
         </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>🐈 Cat Care — Nugget</h2>
-      <p class="lede">Nugget is 18 years old — the equivalent of an 88-year-old human. She's calm, sweet, and low-maintenance. She takes medication for kidney disease, which is common in 80% of older cats. Like an elderly person, she can have poor hearing, poor eyesight, occasional bathroom accidents, and mood changes. She's been checked recently by the vet and is very healthy for her age! Because of her age, Nugget stays indoors.</p>
-
-      <h3>Feeding — 2x daily</h3>
-      <div class="card">
-        <ul class="list">
-          <li>Serve 1/4 can of wet food (once alongside her medication)</li>
-          <li>Refill dry food upstairs &amp; downstairs</li>
-          <li>Refill water upstairs &amp; downstairs</li>
-        </ul>
-      </div>
-
-      <h3>Medication — 1x daily</h3>
-      <div class="card">
-        <ul class="list">
-          <li>Scoop 1/4 can of wet food into her bowl</li>
-          <li>Add 1/4 tsp Aventi powder and mix in with a fork</li>
-          <li>Put 1 pill into a treat pocket, pinch to seal</li>
-          <li>Bury the treat pocket in the wet food</li>
-        </ul>
-      </div>
-
-      <h3>Litter box</h3>
-      <div class="card">
-        <ul class="list">
-          <li>Scoop daily</li>
-          <li>Empty weekly</li>
-          <li>Pour into a garbage bag, rinse the bin in the downstairs sink, air-dry</li>
-          <li>Pour fresh litter into the clean bin</li>
-        </ul>
-      </div>
-
-      <h3>What to expect</h3>
-      <div class="grid-2">
-        <div class="callout">
-          <p><strong>This is normal:</strong><br>
-          Vomiting hairballs · a small poo on the floor once or twice · litter turning yellow · skipping her pill some days · meowing or howling at night · not hearing you (she's very old) · clicking nails when she walks · coming back to food later · not wanting to play with toys.</p>
-        </div>
-        <div class="callout warn">
-          <p><strong>This is not normal — reach out:</strong><br>
-          Zero interest in food for 24+ hours · peeing outside the litter box · vomiting water more than 2x/week · bumping into things · hissing or aggression · hiding 24+ hours (not coming out for food) · heavy breathing/panting · a drooping head or legs.</p>
-        </div>
-      </div>
-
-      <h3>The vet</h3>
-      <div class="card">
-        <p style="margin:0">Our vet comes to the house as needed and sends us an invoice directly. The front office is the best room for a visit — you can shut the door there.</p>
-      </div>
-
-      <h3>In an emergency</h3>
-      <div class="card">
-        <p style="margin:0">Nugget is healthy, so we don't expect issues. If something comes up, contact us first (photos or videos help) — or reach VCA directly for a true emergency. Her carrier is in the basement beside the litter box. The easiest way to load her: open the top and place her hind legs in first.</p>
-      </div>
-
-      <h3>If the worst happens</h3>
-      <div class="card">
-        <p style="margin:0">If the vet recommends euthanasia, you're welcome to follow their guidance and go ahead. If Nugget passes away naturally, please first check for a heartbeat or breathing — if there's none, there's no need to resuscitate. She can be placed in a cardboard box or blanket in our chest freezer, and we'll arrange cremation with the vet once we're home.</p>
       </div>
     </section>
 
@@ -395,8 +330,8 @@
       <h2>👋 Visitors &amp; Parking</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Visitors:</strong> Welcome any time — just keep noise to a minimum from 10pm–8am.</li>
-          <li><strong>Parking:</strong> Free on-street parking; best in front of the house or in the driveway.</li>
+          <li><strong>Visitors:</strong> Visitors are welcome! Please keep noise to a minimum from 10pm–8am.</li>
+          <li><strong>Parking:</strong> Free on-street parking. Best to park in front of our house or in the driveway.</li>
         </ul>
       </div>
     </section>
@@ -405,15 +340,16 @@
       <h2>🎮 Amenities</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Gym:</strong> Yoga mat, treadmill, rowing machine, bike, weights — all yours to use.</li>
-          <li><strong>Trampoline:</strong> Bounce away — just keep it zipped whenever you're on it.</li>
-          <li><strong>Paddleboards:</strong> Two available, stored in the shed.</li>
-          <li><strong>Rec room:</strong> Foosball, darts, pool table, VR headsets, indoor sticky golf.</li>
-          <li><strong>Games / puzzles:</strong> A collection of board games and puzzles in the upstairs office.</li>
-          <li><strong>Appliances:</strong> Air fryer, vacuums, microwave, toaster, Instant Pot, blender, dishwasher, washer/dryer, BBQ, and coffee makers are all available.</li>
-          <li><strong>Fridge:</strong> Help yourself to whatever's inside — replenish if you can, or just leave us a shopping list :)</li>
-          <li><strong>Sheets &amp; blankets:</strong> Closet in the back guest room.</li>
-          <li><strong>Cleaning products, towels, extra toilet paper &amp; paper towel:</strong> Closet near the main bathroom.</li>
+          <li><strong>Gym:</strong> You may use any items including yoga mat, treadmill, rowing machine, bike, weights, etc.</li>
+          <li><strong>Trampoline:</strong> You are welcome to bounce! Keep zipped whenever you are on the trampoline.</li>
+          <li><strong>Paddleboards:</strong> We have 2 paddleboards that you can use. They are located in our shed.</li>
+          <li><strong>Beach supplies:</strong> You may use our beach towels (in basement) or beach toys &amp; wagon (in shed).</li>
+          <li><strong>Rec room:</strong> You can use foosball, darts, pool table, VR headsets, indoor sticky golf, etc.</li>
+          <li><strong>Games/puzzles:</strong> A collection of board games and puzzles is available for use in the upstairs office.</li>
+          <li><strong>Appliances:</strong> Air fryer, vacuums, microwave, toaster, Instant Pot, blender, dishwasher, washer/dryer, BBQ, coffee makers are all available for use.</li>
+          <li><strong>Fridge:</strong> Help yourself to whatever is in the fridge! Try to replenish if you can, or just leave a shopping list :)</li>
+          <li><strong>Sheets &amp; blankets:</strong> Located in the closet in the back guest room.</li>
+          <li><strong>Cleaning products, towels, extra toilet paper, paper towel:</strong> Located in the closet near the main bathroom.</li>
         </ul>
       </div>
     </section>
@@ -422,30 +358,85 @@
       <h2>🛠️ Maintenance</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Water shut-off valve:</strong> Basement, next to the deep freezer.</li>
-          <li><strong>Breaker panel:</strong> Basement, in the rec room.</li>
-          <li><strong>Power outage, leak, or emergency issue:</strong> Contact us first, then Brandon's dad Ken.</li>
+          <li><strong>Water shut-off valve:</strong> Located in the basement, next to the deep freezer.</li>
+          <li><strong>Breaker panel:</strong> Located in the basement, in the rec room.</li>
+          <li><strong>Power outage, leak, or emergency issues:</strong> Contact us first, then Brandon's dad Ken.</li>
         </ul>
       </div>
     </section>
 
     <section>
-      <h2>✅ Before You Leave</h2>
+      <h2>✅ Before You Leave…</h2>
+      <div class="card">
+        <ul class="checklist">
+          <li><input type="checkbox" id="chk-en-1"><label for="chk-en-1">Run the dishwasher</label></li>
+          <li><input type="checkbox" id="chk-en-2"><label for="chk-en-2">Hang wet towels to dry</label></li>
+          <li><input type="checkbox" id="chk-en-3"><label for="chk-en-3">Strip the beds and put sheets in basement laundry bins</label></li>
+          <li><input type="checkbox" id="chk-en-4"><label for="chk-en-4">Empty indoor garbage, compost, and recycling bins</label></li>
+          <li><input type="checkbox" id="chk-en-5"><label for="chk-en-5">Turn off lights &amp; close windows (except for upstairs)</label></li>
+          <li><input type="checkbox" id="chk-en-6"><label for="chk-en-6">Put the cat sitting bin on the kitchen table — take a picture!</label></li>
+          <li><input type="checkbox" id="chk-en-7"><label for="chk-en-7">Send picture of cat sitting bin for next cat sitter</label></li>
+          <li><input type="checkbox" id="chk-en-8"><label for="chk-en-8">Lock all doors</label></li>
+          <li><input type="checkbox" id="chk-en-9"><label for="chk-en-9">Hide the spare key behind the green bin outside — take a picture!</label></li>
+          <li><input type="checkbox" id="chk-en-10"><label for="chk-en-10">Send picture of hidden key for next house sitter</label></li>
+        </ul>
+        <p class="checklist-signoff">Thanks so much!</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🐈 Cat Sitting</h2>
+      <p class="lede">Nugget is 18 years old. This is the equivalent of an 88-year-old human. She takes medication for kidney disease, which is common in 80% of older cats. Nugget does not go outside.</p>
+
+      <h3>Canned food</h3>
       <div class="card">
         <ul class="list">
-          <li>Empty garbage, compost, and recycling</li>
-          <li>Turn off lights, close windows (except the upstairs bathroom)</li>
-          <li>Put dirty sheets in the basement laundry bins</li>
-          <li>Lock the doors and hide the spare key behind the compost bin outside</li>
-          <li>Send a picture of the cat sitting bin and the hidden key so we can share with the next cat sitter.</li>
-          <li>Put out the "cat sitting bin" on the kitchen counter for the next cat sitter</li>
+          <li>Serve 1/2 can of canned food</li>
+          <li>Refill dry food if needed</li>
+          <li>Refill water if needed</li>
+        </ul>
+      </div>
+
+      <h3>Medication</h3>
+      <div class="card">
+        <ul class="list">
+          <li>Scoop canned food into bowl</li>
+          <li>Add 1/4 teaspoon Aventi powder and mix with a fork</li>
+          <li>Put 1 pill into a treat pocket (pinch to seal)</li>
+          <li>Bury in wet food</li>
+        </ul>
+      </div>
+
+      <h3>Litter</h3>
+      <div class="card">
+        <p style="margin:0">Scoop daily and discard into the garbage bin. You do not need to empty the litter box.</p>
+      </div>
+
+      <h3>Behaviour</h3>
+      <div class="grid-2">
+        <div class="callout">
+          <p><strong>This is normal:</strong><br>
+          Vomiting hairballs · litter turning yellow · not eating her pill some days · meowing / howling at night · not hearing you · nails "clicking" when she walks · coming back to her food later · not wanting to play with toys.</p>
+        </div>
+        <div class="callout warn">
+          <p><strong>This is not normal:</strong><br>
+          Zero interest in food &gt;24 hours · peeing outside of the litter box · vomiting water more than once · bumping into items · hissing or being aggressive · heavy breathing / panting · drooping head or legs · shedding tufts of hair.</p>
+        </div>
+      </div>
+
+      <h3>The Tough Stuff</h3>
+      <div class="card">
+        <ul class="list">
+          <li><strong>Veterinarian:</strong> Nugget has recently been checked by the vet, so we do not foresee issues. Please contact us first, with photos or videos if needed, and we can decide if the vet will visit. Please know that he comes to the house — you do not need to take Nugget anywhere. The best room for vet visits is wherever you can shut the door. Our vet can send us an invoice directly.</li>
+          <li><strong>Emergency:</strong> In the event of an emergency, please contact us first or VCA directly in an extreme situation. Nugget's cat carrier is located in the basement beside the litter box. The easiest way to load her is by opening the top and placing her hind legs first.</li>
+          <li><strong>Death or euthanasia:</strong> If the vet recommends euthanasia, you may follow their instructions and go forward with the procedure. If Nugget passes away of natural causes, please first check for a heartbeat or breathing. If there is none, do not resuscitate. Nugget may be placed in a towel or blanket into our chest freezer (in the basement) for us to prepare cremation services with the veterinarian when we are home.</li>
+          <li><strong>Trip ending early:</strong> As we are travelling by boat, our travels depend heavily on weather. If the weather is hazardous, we may return early from our trip. In that case, we will notify you via text or Rover app. Please be assured that you will be paid for your visits even if we do not require you to finish cat sitting.</li>
         </ul>
       </div>
     </section>
 
   </div>
 
-  <!-- ============ FRANÇAIS ============ -->
   <div class="content-fr">
 
     <section>
@@ -453,12 +444,12 @@
       <table>
         <thead><tr><th>Contact</th><th>Rôle</th><th>Téléphone</th></tr></thead>
         <tbody>
-          <tr><td class="name">Brandon et Gariele</td><td class="role">Premier contact pour tout! Appelez, textez ou écrivez en tout temps — nous aurons accès à Internet même sans service cellulaire.</td><td class="phone">250-208-0807<br>250-532-5139<br>coastalbrandon@gmail.com<br>itsgariele@gmail.com</td></tr>
+          <tr><td class="name">Brandon et Gariele</td><td class="role">Premier contact pour tout! Vous pouvez appeler, texter ou écrire par courriel en tout temps. Nous aurons accès à Internet même sans service cellulaire.</td><td class="phone">250-208-0807<br>250-532-5139<br>coastalbrandon@gmail.com<br>itsgariele@gmail.com</td></tr>
           <tr><td class="name">Ken</td><td class="role">Le père de Brandon (à 45 min)</td><td class="phone">250-709-1280</td></tr>
           <tr><td class="name">Tim</td><td class="role">Voisin</td><td class="phone">250-217-5396</td></tr>
           <tr><td class="name">Ryan</td><td class="role">Voisin</td><td class="phone">250-882-2234</td></tr>
-          <tr><td class="name">Vétérinaire — Dr John Pollock</td><td class="role">Vétérinaire régulier, se déplace à la maison</td><td class="phone">(778) 677-7713</td></tr>
-          <tr><td class="name">Vétérinaire d'urgence — VCA</td><td class="role">Après les heures / urgence</td><td class="phone">(250) 475-2495</td></tr>
+          <tr><td class="name">Vétérinaire – Dr John Pollock</td><td class="role">Vétérinaire régulier — se déplace à la maison</td><td class="phone">(778) 677-7713</td></tr>
+          <tr><td class="name">Vétérinaire d'urgence – VCA</td><td class="role">Après les heures / urgence</td><td class="phone">(250) 475-2495</td></tr>
         </tbody>
       </table>
     </section>
@@ -470,7 +461,7 @@
           <li><strong>Code du clavier de la porte :</strong> 2015</li>
           <li><strong>Code de la remise :</strong> 2624</li>
           <li><strong>Clé cachée :</strong> Une clé de la porte de cuisine est cachée dans un porte-parapluies derrière le bac vert, à l'extérieur.</li>
-          <li><strong>Porte de cuisine :</strong> Pour verrouiller, soulevez la poignée, puis tournez le verrou — elle ne se verrouille pas si vous ne soulevez pas la poignée d'abord.</li>
+          <li><strong>Porte de cuisine :</strong> Pour verrouiller, soulevez la poignée, puis tournez le verrou. La porte ne se verrouille pas si vous ne soulevez pas la poignée d'abord.</li>
         </ul>
       </div>
     </section>
@@ -482,8 +473,8 @@
           <li><strong>Courrier / colis :</strong> Veuillez conserver les lettres et les colis. Les circulaires et journaux peuvent être recyclés.</li>
           <li><strong>Plantes :</strong> Nous avons 2 plantes d'intérieur à arroser. Une fois par semaine, versez 1 L d'eau dans chaque pot.</li>
           <li><strong>Ménage :</strong> Notre équipe de ménage vient le 20 août, de 11h15 à 12h45, pour le ménage régulier. C'est payé automatiquement chaque mois — vous n'avez pas besoin d'être à la maison.</li>
-          <li><strong>Plomberie :</strong> Nos tuyaux sont vieux et la pression de chasse est faible — il n'est pas rare qu'il faille tirer la chasse plus d'une fois. Le robinet à l'étage goutte aussi un peu.</li>
-          <li><strong>Zone interdite :</strong> Aria a demandé qu'on ne touche à rien dans sa chambre.</li>
+          <li><strong>Plomberie :</strong> Nos tuyaux sont vieux et la pression de chasse est faible — il n'est pas rare qu'il faille tirer la chasse plus d'une fois.</li>
+          <li><strong>Zone interdite :</strong> Aria a demandé que rien ne soit touché dans sa chambre.</li>
           <li><strong>Ordures et recyclage :</strong> Sortez les ordures, le carton aplati et le recyclage au chemin le 13 août.</li>
         </ul>
       </div>
@@ -495,68 +486,13 @@
         <ul class="list">
           <li><strong>Wi-Fi :</strong> NanoMansion, mot de passe : Socoastal1</li>
           <li><strong>Télé / diffusion en continu :</strong> Utilisez nos abonnements — Crave, Netflix, Disney+, YouTube, Apple TV ou Prime Video. Pas besoin de vous déconnecter.</li>
+          <li><strong>Éclairage / Google Home :</strong> Plusieurs de nos lumières sont contrôlées par Google Home. Les seules que vous devez connaître sont celles de la salle de jeux. Dites à voix haute les commandes suivantes (en anglais) :
+            <ul class="list" style="margin-top:8px;">
+              <li><strong>Pour allumer :</strong> « Hey Google, it's game time »</li>
+              <li><strong>Pour éteindre :</strong> « Hey Google, game over »</li>
+            </ul>
+          </li>
         </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>🐈 Soins de Nugget</h2>
-      <p class="lede">Nugget a 18 ans — l'équivalent d'environ 88 ans chez un humain. Elle est calme, douce et facile à vivre. Elle prend des médicaments pour une maladie rénale, fréquente chez 80 % des chats âgés. Comme chez une personne âgée, elle peut avoir une ouïe et une vue diminuées, de petits accidents, et des sautes d'humeur. Elle a été examinée récemment par le vétérinaire et se porte très bien pour son âge! En raison de son âge, Nugget reste à l'intérieur.</p>
-
-      <h3>Nourriture — 2 fois par jour</h3>
-      <div class="card">
-        <ul class="list">
-          <li>Servez 1/4 de boîte de nourriture humide (une fois avec son médicament)</li>
-          <li>Remplissez les gamelles de nourriture sèche à l'étage et en bas</li>
-          <li>Remplissez les gamelles d'eau à l'étage et en bas</li>
-        </ul>
-      </div>
-
-      <h3>Médicament — 1 fois par jour</h3>
-      <div class="card">
-        <ul class="list">
-          <li>Versez 1/4 de boîte de nourriture humide dans son bol</li>
-          <li>Ajoutez 1/4 tsp à thé de poudre Aventi et mélangez à la fourchette</li>
-          <li>Mettez 1 comprimé dans une pochette à gâterie, pincez pour sceller</li>
-          <li>Enfouissez la pochette dans la nourriture humide</li>
-        </ul>
-      </div>
-
-      <h3>Bac à litière</h3>
-      <div class="card">
-        <ul class="list">
-          <li>Ramassez tous les jours</li>
-          <li>Videz une fois par semaine</li>
-          <li>Versez dans un sac à ordures, rincez le bac dans l'évier du sous-sol, laissez sécher à l'air</li>
-          <li>Remplissez le bac propre de litière neuve</li>
-        </ul>
-      </div>
-
-      <h3>À quoi s'attendre</h3>
-      <div class="grid-2">
-        <div class="callout">
-          <p><strong>C'est normal :</strong><br>
-          Vomir des boules de poils · un petit caca par terre, une ou deux fois · la litière qui jaunit · refuser son comprimé certains jours · miauler ou hurler la nuit · ne pas vous entendre (elle est très âgée) · ses griffes qui « cliquent » quand elle marche · revenir manger plus tard · ne pas vouloir jouer avec ses jouets.</p>
-        </div>
-        <div class="callout warn">
-          <p><strong>Ce n'est pas normal — contactez-nous :</strong><br>
-          Aucun intérêt pour la nourriture pendant plus de 24 h · faire pipi hors du bac à litière · vomir de l'eau plus de 2 fois par semaine · se cogner contre des objets · feuler ou devenir agressive · se cacher plus de 24 h (sans sortir pour manger) · respiration lourde ou halètement · tête ou pattes qui s'affaissent.</p>
-        </div>
-      </div>
-
-      <h3>Le vétérinaire</h3>
-      <div class="card">
-        <p style="margin:0">Notre vétérinaire se déplace à la maison au besoin et nous envoie la facture directement. Le bureau à l'avant est la meilleure pièce pour ses visites — vous pouvez y fermer la porte.</p>
-      </div>
-
-      <h3>En cas d'urgence</h3>
-      <div class="card">
-        <p style="margin:0">Nugget est en bonne santé, donc on ne prévoit pas de problème. En cas de besoin, contactez-nous d'abord (des photos ou vidéos aident) — ou joignez VCA directement en cas d'urgence réelle. Sa cage de transport se trouve au sous-sol, près du bac à litière. Le plus simple pour l'y installer : ouvrez le dessus et placez d'abord son arrière-train.</p>
-      </div>
-
-      <h3>En cas de décès ou d'euthanasie</h3>
-      <div class="card">
-        <p style="margin:0">Si le vétérinaire recommande l'euthanasie, vous pouvez suivre ses recommandations et procéder. Si Nugget décède de mort naturelle, veuillez d'abord vérifier son pouls ou sa respiration — s'il n'y en a aucun, il n'est pas nécessaire de tenter une réanimation. Vous pouvez la placer dans une boîte de carton ou une couverture, dans notre congélateur; nous organiserons la crémation avec le vétérinaire à notre retour.</p>
       </div>
     </section>
 
@@ -564,8 +500,8 @@
       <h2>👋 Visiteurs et stationnement</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Visiteurs :</strong> Bienvenue en tout temps — merci de limiter le bruit entre 22h et 8h.</li>
-          <li><strong>Stationnement :</strong> Stationnement gratuit dans la rue; le mieux est devant la maison ou dans l'entrée.</li>
+          <li><strong>Visiteurs :</strong> Les visiteurs sont bienvenus! Merci de limiter le bruit entre 22h et 8h.</li>
+          <li><strong>Stationnement :</strong> Stationnement gratuit dans la rue. Le mieux est devant la maison ou dans l'entrée.</li>
         </ul>
       </div>
     </section>
@@ -574,15 +510,16 @@
       <h2>🎮 Commodités</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Gym :</strong> Tapis de yoga, tapis roulant, rameur, vélo, poids — tout est à votre disposition.</li>
-          <li><strong>Trampoline :</strong> Sautez autant que vous voulez — gardez-le fermé pendant que vous l'utilisez.</li>
-          <li><strong>Planches à pagaie :</strong> Deux disponibles, rangées dans la remise.</li>
-          <li><strong>Salle de jeux :</strong> Babyfoot, fléchettes, table de billard, casques de réalité virtuelle, golf intérieur.</li>
-          <li><strong>Jeux / casse-têtes :</strong> Une collection de jeux de société et de casse-têtes dans le bureau à l'étage.</li>
-          <li><strong>Électroménagers :</strong> Friteuse à air, aspirateurs, four à micro-ondes, grille-pain, Instant Pot, mélangeur, lave-vaisselle, laveuse/sécheuse, BBQ et cafetières — tous à votre disposition.</li>
-          <li><strong>Réfrigérateur :</strong> Servez-vous de ce qu'il y a dedans — réapprovisionnez si possible, ou laissez-nous simplement une liste d'épicerie :)</li>
-          <li><strong>Draps et couvertures :</strong> Placard de la chambre d'amis à l'arrière.</li>
-          <li><strong>Produits de nettoyage, serviettes, papier hygiénique et essuie-tout supplémentaires :</strong> Placard près de la salle de bain principale.</li>
+          <li><strong>Gym :</strong> Vous pouvez utiliser tout l'équipement, y compris le tapis de yoga, le tapis roulant, le rameur, le vélo, les poids, etc.</li>
+          <li><strong>Trampoline :</strong> Vous êtes bienvenu(e) d'en profiter! Gardez-le fermé pendant que vous l'utilisez.</li>
+          <li><strong>Planches à pagaie :</strong> Nous avons 2 planches à pagaie que vous pouvez utiliser. Elles sont rangées dans la remise.</li>
+          <li><strong>Articles de plage :</strong> Vous pouvez utiliser nos serviettes de plage (au sous-sol) ou nos jouets de plage et le chariot (dans la remise).</li>
+          <li><strong>Salle de jeux :</strong> Vous pouvez utiliser le babyfoot, les fléchettes, la table de billard, les casques de réalité virtuelle, le golf intérieur, etc.</li>
+          <li><strong>Jeux / casse-têtes :</strong> Une collection de jeux de société et de casse-têtes est disponible dans le bureau à l'étage.</li>
+          <li><strong>Électroménagers :</strong> Friteuse à air, aspirateurs, four à micro-ondes, grille-pain, Instant Pot, mélangeur, lave-vaisselle, laveuse/sécheuse, BBQ et cafetières sont tous à votre disposition.</li>
+          <li><strong>Réfrigérateur :</strong> Servez-vous de ce qu'il y a dedans! Essayez de réapprovisionner si possible, ou laissez-nous simplement une liste d'épicerie :)</li>
+          <li><strong>Draps et couvertures :</strong> Dans le placard de la chambre d'amis à l'arrière.</li>
+          <li><strong>Produits de nettoyage, serviettes, papier hygiénique et essuie-tout supplémentaires :</strong> Dans le placard près de la salle de bain principale.</li>
         </ul>
       </div>
     </section>
@@ -591,23 +528,79 @@
       <h2>🛠️ Entretien</h2>
       <div class="card">
         <ul class="list">
-          <li><strong>Robinet d'arrêt d'eau :</strong> Sous-sol, à côté du congélateur.</li>
-          <li><strong>Panneau électrique :</strong> Sous-sol, dans la salle de jeux.</li>
+          <li><strong>Robinet d'arrêt d'eau :</strong> Au sous-sol, à côté du congélateur.</li>
+          <li><strong>Panneau électrique :</strong> Au sous-sol, dans la salle de jeux.</li>
           <li><strong>Panne de courant, fuite ou urgence :</strong> Contactez-nous d'abord, puis Ken, le père de Brandon.</li>
         </ul>
       </div>
     </section>
 
     <section>
-      <h2>✅ Avant de partir</h2>
+      <h2>✅ Avant de partir…</h2>
+      <div class="card">
+        <ul class="checklist">
+          <li><input type="checkbox" id="chk-fr-1"><label for="chk-fr-1">Faites fonctionner le lave-vaisselle</label></li>
+          <li><input type="checkbox" id="chk-fr-2"><label for="chk-fr-2">Étendez les serviettes mouillées pour qu'elles sèchent</label></li>
+          <li><input type="checkbox" id="chk-fr-3"><label for="chk-fr-3">Défaites les lits et mettez les draps dans les bacs à lessive au sous-sol</label></li>
+          <li><input type="checkbox" id="chk-fr-4"><label for="chk-fr-4">Videz les poubelles, le compost et le bac de recyclage intérieurs</label></li>
+          <li><input type="checkbox" id="chk-fr-5"><label for="chk-fr-5">Éteignez les lumières et fermez les fenêtres (sauf à l'étage)</label></li>
+          <li><input type="checkbox" id="chk-fr-6"><label for="chk-fr-6">Sortez le bac pour le gardien de chat sur la table de la cuisine — prenez une photo!</label></li>
+          <li><input type="checkbox" id="chk-fr-7"><label for="chk-fr-7">Envoyez la photo du bac pour le prochain gardien de chat</label></li>
+          <li><input type="checkbox" id="chk-fr-8"><label for="chk-fr-8">Verrouillez toutes les portes</label></li>
+          <li><input type="checkbox" id="chk-fr-9"><label for="chk-fr-9">Cachez la clé de secours derrière le bac vert à l'extérieur — prenez une photo!</label></li>
+          <li><input type="checkbox" id="chk-fr-10"><label for="chk-fr-10">Envoyez la photo de la clé cachée pour le prochain gardien de la maison</label></li>
+        </ul>
+        <p class="checklist-signoff">Merci beaucoup!</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>🐈 Garde du chat</h2>
+      <p class="lede">Nugget a 18 ans. C'est l'équivalent d'environ 88 ans chez un être humain. Elle prend des médicaments pour une maladie rénale, fréquente chez 80 % des chats âgés. Nugget ne sort pas à l'extérieur.</p>
+
+      <h3>Nourriture en conserve</h3>
       <div class="card">
         <ul class="list">
-          <li>Videz les ordures, le compost et le recyclage</li>
-          <li>Éteignez les lumières, fermez les fenêtres (sauf celle de la salle de bain à l'étage)</li>
-          <li>Mettez les draps sales dans les bacs à lessive au sous-sol</li>
-          <li>Sortez la « boîte pour le gardien de chat » sur le comptoir de la cuisine pour la prochaine personne qui s'occupera du chat.</li>
-          <li>Verrouillez les portes et cachez la clé de secours derrière le bac à compost, à l'extérieur</li>
-          <li>Envoyez une photo du bac où se trouve la clé cachée, afin que nous puissions la transmettre au prochain cat-sitter.</li>
+          <li>Servez 1/2 boîte de nourriture en conserve</li>
+          <li>Remplissez la nourriture sèche au besoin</li>
+          <li>Remplissez l'eau au besoin</li>
+        </ul>
+      </div>
+
+      <h3>Médicament</h3>
+      <div class="card">
+        <ul class="list">
+          <li>Versez la nourriture en conserve dans le bol</li>
+          <li>Ajoutez 1/4 c. à thé de poudre Aventi et mélangez à la fourchette</li>
+          <li>Mettez 1 comprimé dans une pochette à gâterie (pincez pour sceller)</li>
+          <li>Enfouissez-la dans la nourriture humide</li>
+        </ul>
+      </div>
+
+      <h3>Litière</h3>
+      <div class="card">
+        <p style="margin:0">Ramassez tous les jours et jetez à la poubelle. Il n'est pas nécessaire de vider le bac à litière.</p>
+      </div>
+
+      <h3>Comportement</h3>
+      <div class="grid-2">
+        <div class="callout">
+          <p><strong>C'est normal :</strong><br>
+          Vomir des boules de poils · la litière qui jaunit · ne pas manger son comprimé certains jours · miauler ou hurler la nuit · ne pas vous entendre · ses griffes qui « cliquent » quand elle marche · revenir manger plus tard · ne pas vouloir jouer avec ses jouets.</p>
+        </div>
+        <div class="callout warn">
+          <p><strong>Ce n'est pas normal :</strong><br>
+          Aucun intérêt pour la nourriture pendant plus de 24 h · faire pipi hors du bac à litière · vomir de l'eau plus d'une fois · se cogner contre des objets · feuler ou devenir agressive · respiration lourde ou halètement · tête ou pattes qui s'affaissent · perdre des touffes de poils.</p>
+        </div>
+      </div>
+
+      <h3>Les choses plus difficiles</h3>
+      <div class="card">
+        <ul class="list">
+          <li><strong>Vétérinaire :</strong> Nugget a été examinée récemment par le vétérinaire, donc nous ne prévoyons pas de problème. Contactez-nous d'abord, avec photos ou vidéos si possible, et nous déciderons si le vétérinaire doit passer. Sachez qu'il se déplace à la maison — vous n'avez pas besoin d'amener Nugget où que ce soit. La meilleure pièce pour ses visites est n'importe quelle pièce où vous pouvez fermer la porte. Notre vétérinaire peut nous envoyer la facture directement.</li>
+          <li><strong>Urgence :</strong> En cas d'urgence, contactez-nous d'abord, ou VCA directement en cas de situation extrême. La cage de transport de Nugget se trouve au sous-sol, à côté du bac à litière. Le plus simple pour l'y installer : ouvrez le dessus et placez d'abord son arrière-train.</li>
+          <li><strong>Décès ou euthanasie :</strong> Si le vétérinaire recommande l'euthanasie, vous pouvez suivre ses instructions et procéder. Si Nugget décède de mort naturelle, vérifiez d'abord son pouls ou sa respiration. S'il n'y en a aucun, ne tentez pas de réanimation. Nugget peut être placée dans une serviette ou une couverture, dans notre congélateur (au sous-sol), pour que nous puissions organiser la crémation avec le vétérinaire à notre retour.</li>
+          <li><strong>Fin de voyage anticipée :</strong> Comme nous voyageons en bateau, nos déplacements dépendent beaucoup de la météo. Si les conditions deviennent dangereuses, il se peut que nous rentrions plus tôt. Dans ce cas, nous vous préviendrons par texto ou via l'application Rover. Soyez assuré(e) que vous serez payé(e) pour vos visites, même si vous n'avez pas à terminer la garde du chat.</li>
         </ul>
       </div>
     </section>
